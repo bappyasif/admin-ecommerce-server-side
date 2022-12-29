@@ -35,7 +35,9 @@ const customerLogin = (req, res) => {
         res.status(400).json({msg: "user is not found"})
     }
 
-    compareHashedPasswordFromCustomerLogin(password, user.hashedPassword)
+    console.log(user, req.body)
+
+    compareHashedPasswordFromCustomerLogin(password, user?.hashedPassword)
         .then(result => {
             if(result) {
                 res.status(201).json({msg: "password matched", user: user})
