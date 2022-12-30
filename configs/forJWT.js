@@ -25,8 +25,6 @@ const confirmCustomerIsAuthenticate = (req, res, next) => {
 
     const token = authHeader.split(" ")[1]
 
-    console.log(token, "TOKEN!!")
-
     if(token === null) return res.status.status(401).json({msg: "authorization token is missing"})
 
     jwt.verify(token, process.env.SECRET_TOKEN, (err, user) => {

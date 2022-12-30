@@ -6,11 +6,6 @@ const { newOrderIsPlaced, getListOfAllOrders, getSpecificOrderItem } = require("
 const { getAllAvailableProducts, getSpecificProductFromProductsList, removeSpecificProductFromProductsList, addNewProductIntoProductsList } = require("../controllers/forProducts");
 const routes = express();
 
-// routes.get("/all-customers", confirmCustomerIsAuthenticate, getAllExistingCustomers);
-// routes.get("/all-customers", getAllExistingCustomers);
-// routes.get("/all-customers/:custId", getSpecificCustomer);
-// routes.delete("/all-customers/:custId", removeSpecificCustomer);
-
 routes.get("/all-customers", confirmCustomerIsAuthenticate, getAllExistingCustomers);
 routes.get("/all-customers/:custId", getSpecificCustomer);
 routes.delete("/all-customers/:custId", removeSpecificCustomer);
@@ -28,10 +23,8 @@ routes.get("/all-products", confirmCustomerIsAuthenticate, getAllAvailableProduc
 routes.post("/all-products/", addNewProductIntoProductsList)
 routes.get("/all-products/:prodId", getSpecificProductFromProductsList)
 routes.delete("/all-products/:prodId", removeSpecificProductFromProductsList)
-// routes.post("/all-products/:prodId")
 
 routes.post("/new-order", newOrderIsPlaced)
-// routes.get("/all-orders", getListOfAllOrders)
 routes.get("/all-orders", confirmCustomerIsAuthenticate, getListOfAllOrders)
 routes.get("/all-orders/:orderId", getSpecificOrderItem)
 module.exports = routes

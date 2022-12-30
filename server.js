@@ -8,7 +8,8 @@ app.use(express.json());
 app.use(cors({
     origin: [
         "http://localhost:3000",
-        "https://admin-ecommerce-client-side-ip29e8v47-bappyasif.vercel.app"
+        "https://admin-ecommerce-client-side.vercel.app"
+        // "https://admin-ecommerce-client-side-ip29e8v47-bappyasif.vercel.app"
     ],
     // default: "http://localhost:3000",
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
